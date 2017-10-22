@@ -1,4 +1,22 @@
 h1
-  | FeaturePages#view
+  | MALS View
 p
   | Find me in app/views/feature_pages/view.html.erb
+
+h2
+  | 広告を表示したい箇所に以下のコードを挿入してください。
+p
+  | ---ここから---
+pre
+  | &lt;div id="js-replacer"&gt;&lt;/div&gt;
+  br
+  | &lt;script src="#{@mals_url}#{@mals_js_path}"&gt;&lt;/script&gt;
+p
+  | ---ここまで---
+h2
+  | 表示サンプル
+p
+  | 現状の設定では以下の広告が表示されます。(ページ更新で登録中の広告からランダム表示)
+  #js-replacer
+    | target area
+= javascript_include_tag 'mals', 'data-turbolinks-track': 'reload'
