@@ -19,4 +19,5 @@ p
   | 現状の設定では以下の広告が表示されます。(ページ更新で登録中の広告からランダム表示)
   #js-replacer
     | target area
-= javascript_include_tag 'mals', 'data-turbolinks-track': 'reload'
+script src="#{@mals_js_path}"
+//= javascript_include_tag 'feature_pages', 'data-turbolinks-track': 'reload'
