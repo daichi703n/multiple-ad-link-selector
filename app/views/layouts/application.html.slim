@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title
+      | MALS - Multiple Ad Links Selector
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    = yield
+
+  footer
+    h3
+      | Menu
+    ul
+      li = link_to 'home', '/'
+      li = link_to 'about', '/static_pages/about'
+      li = link_to 'help', '/static_pages/help'
+    h3
+      | Feature
+    ul
+      li = link_to 'manage', '/feature_pages/manage'
+      li = link_to 'view', '/feature_pages/view'

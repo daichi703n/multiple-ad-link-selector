@@ -7,7 +7,8 @@ end
 
 ruby '2.4.1'
 
-gem 'pg', '0.20.0'
+gem 'slim-rails'
+gem 'html2slim'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -33,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'pg', '0.20.0'
+end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
