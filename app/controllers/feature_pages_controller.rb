@@ -1,5 +1,6 @@
 class FeaturePagesController < ApplicationController
   def manage
+    @links = Link.all
   end
 
   def view
