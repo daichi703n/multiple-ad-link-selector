@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :links
   get 'feature_pages/manage'
 
   get 'feature_pages/view'
