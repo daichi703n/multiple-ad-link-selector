@@ -6,4 +6,16 @@
         - @link.errors.full_messages.each do |message|
           li = message
 
+  .field
+    = f.label :sort
+    = f.number_field :sort
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :link
+    = f.text_area :link
+  .field
+    = f.label :enabled
+    = f.check_box :enabled
   .actions = f.submit

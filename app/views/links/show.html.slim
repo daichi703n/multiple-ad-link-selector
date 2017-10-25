@@ -1,5 +1,17 @@
 p#notice = notice
 
+p
+  strong Sort:
+  = @link.sort
+p
+  strong Description:
+  = @link.description
+p
+  strong Link:
+  = @link.link
+p
+  strong Enabled:
+  = @link.enabled
 
 => link_to 'Edit', edit_link_path(@link)
 '|
