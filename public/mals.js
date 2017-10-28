@@ -29,7 +29,7 @@ async function setLink(){
   const selected_link = await getLink()
   console.log("MALS Link has got")
   //console.log(selected_link)
-  const target=document.getElementById("js-replacer")
+  const target=document.getElementById("mals_replace_target")
   target.innerHTML = selected_link+msg
 }
 
