@@ -10,6 +10,9 @@ ruby '2.4.1'
 gem 'slim-rails'
 gem 'html2slim'
 
+# Use Grape for API
+gem 'grape'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server

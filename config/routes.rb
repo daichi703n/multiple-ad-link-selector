@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :links
+  mount Selector::API => '/'
   get 'feature_pages/manage'
 
   get 'feature_pages/view'
