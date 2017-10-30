@@ -30,7 +30,13 @@ async function setLink(){
   console.log("MALS Link has got")
   //console.log(selected_link)
   const target=document.getElementById("mals_replace_target")
-  target.innerHTML = selected_link+msg
+  //target.innerHTML = selected_link+msg
+
+  //const decoded = selected_link.replace(/(\\u)([0-9A-F]{4})/g, function(match,p1,p2){
+  //  return String.fromCharCode(parseInt(p2, 16));
+  //});
+  //console.log(JSON.parse(selected_link))
+  target.innerHTML = JSON.parse(selected_link)+msg
 }
 
 //console.log('/public/mals.js')
