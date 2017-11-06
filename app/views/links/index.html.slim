@@ -17,7 +17,7 @@ table
       tr
         td = link.sort
         td = link.description
-        td = link.link.html_safe
+        td == link.link
         td = link.link
         td = link.enabled
         td = link_to 'Show', link
