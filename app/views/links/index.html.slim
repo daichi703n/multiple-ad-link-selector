@@ -6,7 +6,7 @@ table
       th Sort
       th Description
       th Preview
-      th Link
+      /th Link
       th Enabled
       th
       th
@@ -18,7 +18,7 @@ table
         td = link.sort
         td = link.description
         td == link.link
-        td = link.link
+        /td = link.link
         td = link.enabled
         td = link_to 'Show', link
         td = link_to 'Edit', edit_link_path(link)
