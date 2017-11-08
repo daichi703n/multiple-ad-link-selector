@@ -41,6 +41,7 @@ gem 'jbuilder', '~> 2.5'
 group :production do
   #gem 'pg', '0.20.0'
   gem 'mysql2', '~> 0.4.9'
+  gem 'activerecord-mysql2-adapter', '~> 0.0.3'
 end
 
 group :development, :test do
