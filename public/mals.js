@@ -1,25 +1,52 @@
-//alert('replacer.js')
-console.log('js')
+//This JavaScript get MALS registered link, and Replace HTML View
+function getLink(){
+  //console.log("getLink")
+  // Select item on Server Side
+  const got_link = new Promise((resolve,reject) => {
+    const request = new XMLHttpRequest()
+    request.open("GET", link_api)
+    request.timeout = 30000; // time in milliseconds
+    //Success
+    request.addEventListener("load", (event) => {resolve(event.target.responseText)})
+    //Fail
+    request.ontimeout = function(e) {
+      console.error("Request timed out - Please contact MALS help")
+    }
+    request.addEventListener("load", (event) => {
+      if(event.target.status != 200){
+        reject(console.error("HTTP Status: "+event.target.status+" - Please contact MALS help"));
+      }
+    });
+    request.addEventListener("error", () => {
+        reject(console.error("Network Error - Please contact MALS help"));
+    });
+    request.send()
+  })
+  return got_link
+}
 
-//https://asciidwango.github.io/js-primer/use-case/ajaxapp/xhr/
+async function setLink(){
+  const selected_link = await getLink()
+  console.log("MALS Link has got")
+  //console.log(selected_link)
+  const target=document.getElementById("mals_replace_target")
+  //target.innerHTML = selected_link+msg
 
-//const request = new XMLHttpRequest()
-//request.open("GET", 'data/links')
-//request.addEventListener("load", (event) => {
-//    console.log(event.target.status) # => 200
-//    console.log(event.target.responseText) # => "{...}"
-//})
-//request.send()
-//http://www.pori2.net/js/DOM/2.html
+  //const decoded = selected_link.replace(/(\\u)([0-9A-F]{4})/g, function(match,p1,p2){
+  //  return String.fromCharCode(parseInt(p2, 16));
+  //});
+  //console.log(JSON.parse(selected_link))
+  target.innerHTML = JSON.parse(selected_link)+msg
+}
 
-var offer_item = new Array()
-offer_item.push('<table border="0" cellpadding="0" cellspacing="0"><tr><td><p style="font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td><td><div style="background-color:#FFFFFF;margin:0px;padding-top:6px;text-align:center;overflow:auto;"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fiphone7case-woodcase%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000921%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/14bccbe5.7ff72f60.14bccbe6.28807e17/?me_id=1199861&item_id=10000921&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fiphone7woodcase%2Fiphone7case-s1.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fiphone7woodcase%2Fiphone7case-s1.jpg%3F_ex%3D300x300&s=300x300&t=picttext" border="0" style="margin:2px" alt="" title=""></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fiphone7case-woodcase%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000921%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  >■【8/7】iPhone8/7用木製ケース「Wooden case for iPhone8/7」木目が美しいカバー【Qi対応】</a></p></div></td></tr></table>')
-//offer_item.push('<table border="0" cellpadding="0" cellspacing="0"><tr><td><p style="font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td><td><div style="border:1px solid #000000;background-color:#FFFFFF;margin:0px;padding-top:6px;text-align:center;overflow:auto;"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjoxLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/14bccbe5.7ff72f60.14bccbe6.28807e17/?me_id=1199861&item_id=10000399&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D300x300&s=300x300&t=picttext" border="0" style="margin:2px" alt="" title=""></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjoxLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  >木でできたキーボード「Full Ki-Board」</a></p></div></td></tr></table>')
-offer_item.push('<table border="0" cellpadding="0" cellspacing="0"><tr><td><p style="font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td><td><div style="background-color:#FFFFFF;margin:0px;padding-top:6px;text-align:center;overflow:auto;"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/14bccbe5.7ff72f60.14bccbe6.28807e17/?me_id=1199861&item_id=10000399&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D300x300&s=300x300&t=picttext" border="0" style="margin:2px" alt="" title=""></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  >木でできたキーボード「Full Ki-Board」</a></p></div></td></tr></table>')
-//offer_item.push('<a href="https://hb.afl.rakuten.co.jp/hgc/161cc8cc.208ec5b7.15fa6e23.eb612d20/?pc=https%3A%2F%2Fwww.rakuten.co.jp%2Fpower-stone%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpower-stone%2F&link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxIiwiYmFuIjoiMzM0NSJ9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hlb/161cc8cc.208ec5b7.15fa6e23.eb612d20/?sid=1&shop=power-stone&size=2&kind=1&me_id=1199355&me_adv_id=3345&t=logo" border="0" style="margin:2px" alt="" title=""></a>')
+//console.log('/public/mals.js')
+//const link_api = "/links"
+const link_api = "/api/selector/v1/links/random"
+//ToDo: in Advanced edition, msg will be unvisible
+const msg = '<div id="mals_message"><font color="lightgray">'+
+'This Link is Generated by MALS<br>'+
+'<a href="https://mals.herokuapp.com" target="_blank">https://mals.herokuapp.com</a><br>'+
+'</font></div>'
 
-// Pickup item by random
-var selected_item=offer_item[Math.floor(Math.random() * offer_item.length)]
-
-var target=document.getElementById("js-replacer")
-target.innerHTML = selected_item
+setLink()
+//console.log("Finish mals.js")

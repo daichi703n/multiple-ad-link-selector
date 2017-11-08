@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sort: 1
+  description: MyString
+  link: MyText
+  enabled: false
+
+two:
+  sort: 1
+  description: MyString
+  link: MyText
+  enabled: false

@@ -24,3 +24,5 @@
 
 /vendor
 /tmp_cert
+
+/app/api/tmp/

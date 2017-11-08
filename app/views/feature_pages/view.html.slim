@@ -8,7 +8,7 @@ h2
 p
   | ---ここから---
 pre
-  | &lt;div id="js-replacer"&gt;&lt;/div&gt;
+  | &lt;div id="#{@mals_div_id}"&gt;&lt;/div&gt;
   br
   | &lt;script src="#{@mals_url}#{@mals_js_path}"&gt;&lt;/script&gt;
 p
@@ -17,7 +17,7 @@ h2
   | 表示サンプル
 p
   | 現状の設定では以下の広告が表示されます。(ページ更新で登録中の広告からランダム表示)
-  #js-replacer
-    | target area
+  div id="#{@mals_div_id}"
+    | This message will be replaced.
 script src="#{@mals_js_path}"
 //= javascript_include_tag 'feature_pages', 'data-turbolinks-track': 'reload'

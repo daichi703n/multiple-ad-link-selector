@@ -1,0 +1,29 @@
+h1 Listing links
+
+table
+  thead
+    tr
+      th Sort
+      th Description
+      th Preview
+      /th Link
+      th Enabled
+      th
+      th
+      th
+
+  tbody
+    - @links.each do |link|
+      tr
+        td = link.sort
+        td = link.description
+        td == link.link
+        /td = link.link
+        td = link.enabled
+        td = link_to 'Show', link
+        td = link_to 'Edit', edit_link_path(link)
+        td = link_to 'Destroy', link, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Link', new_link_path

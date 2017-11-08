@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Link.create(
+  sort: 1,
+  description: 'Sample Link',
+  link: '<a href="https://mals.herokuapp.com/">MALS</a>',
+  enabled: true
+  )
+Link.create(
+  sort: 2,
+  description: 'Sample Link2',
+  link: '<a href="https://mals2.herokuapp.com/">MALS</a>',
+  enabled: true
+  )

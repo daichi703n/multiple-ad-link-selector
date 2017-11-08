@@ -1,4 +1,15 @@
 h1
-  | FeaturePages#manage
+  | Ad Links Manager
 p
   | Find me in app/views/feature_pages/manage.html.erb
+
+h2
+  | リンクを編集してください。
+
+- @links.each do |link|
+  p
+  b Description:
+  = link.description
+  p
+  b Link:
+  = link.link
