@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use rack-cors for Cross Domain API Access
+gem 'rack-cors', :require => 'rack/cors'
+
 group :production do
   #gem 'pg', '0.20.0'
   gem 'mysql2', '~> 0.4.9'
