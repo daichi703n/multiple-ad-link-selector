@@ -2,3 +2,9 @@ h1
   | Home
 p
   | Find me in app/views/static_pages/home.html.erb
+p
+  = link_to 'Signin with Google', user_google_oauth2_omniauth_authorize_path
+p
+  | Logged in User: 
+  = current_user.email unless current_user.nil?
+  = "Not Logged In" if current_user.nil?
