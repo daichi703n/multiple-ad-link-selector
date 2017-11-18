@@ -41,6 +41,11 @@ gem 'jbuilder', '~> 2.5'
 # Use rack-cors for Cross Domain API Access
 gem 'rack-cors', :require => 'rack/cors'
 
+# Use Google OAuth
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+gem 'devise'
+
 group :production do
   #gem 'pg', '0.20.0'
   gem 'mysql2', '~> 0.4.9'
