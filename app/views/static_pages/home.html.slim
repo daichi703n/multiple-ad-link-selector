@@ -5,8 +5,10 @@ p
 p
   = link_to 'Signin with Google', user_google_oauth2_omniauth_authorize_path
 p
-  | Logged in User: 
-  = current_user.email unless current_user.nil?
-  = "Not Logged In" if current_user.nil?
+  | Logged in User:
+  = current_user.email if user_signed_in?
+  = "Not Logged In" unless user_signed_in?
 p
-  = link_to 'Signout', destroy_user_session_path, method: :delete unless current_user.nil?
+  = link_to 'Signout', destroy_user_session_path, method: :delete if user_signed_in?
+P
+  = link_to 'Unsubscribe', '/users', method: :delete, data: { confirm: "Really want to UNSUBSCRIBE?\nYour links will be removed!!" }  if user_signed_in?
