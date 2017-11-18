@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | Google OAuth test site
+      | MALS - Multiple Ad Links Selector
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -20,7 +20,6 @@ html
     h3
       | Feature
     ul
-      li Features
-      /li = link_to 'manage', '/feature_pages/manage'
-      /li = link_to 'view', '/feature_pages/view'
-      /li = link_to 'links', '/links'
+      li = link_to 'manage', '/feature_pages/manage'
+      li = link_to 'view', '/feature_pages/view'
+      li = link_to 'links', '/links'
