@@ -4,7 +4,9 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    #@links = Link.all
+    @user = User.find(current_user.id)
+    @links = @user.links
   end
 
   # GET /links/1
@@ -24,7 +26,9 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    #@link = Link.new(link_params)
+    @user = User.find(current_user.id)
+    @link = @user.links.new(link_params)
 
     respond_to do |format|
       if @link.save
