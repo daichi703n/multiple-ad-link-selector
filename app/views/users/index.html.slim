@@ -4,14 +4,14 @@ p Find me in app/views/users/index.html.slim
 table
   thead
     tr
-      th ID
+      /th ID
       th Email
       th Name
 
   tbody
     - @users.each do |user|
       tr
-        td = user.id
+        /td = user.id
         td = user.email
         td = user.name
         td = link_to 'Detail', user
