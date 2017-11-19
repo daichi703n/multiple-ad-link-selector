@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       #ogger.debug("========== DEBUG ==========")
       #logger.debug("persisted: #{@user.inspect}")
       # Original update save hashed_email for javascript key
-      @user.update(hashed_email: Digest::SHA1.hexdigest(@user.email))
+      @user.update(hashed_email: Digest::SHA2.hexdigest(@user.email))
       #logger.debug("========== DEBUG ==========")
       #logger.debug("persisted: #{@user.inspect}")
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
