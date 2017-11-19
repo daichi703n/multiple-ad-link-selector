@@ -112,3 +112,7 @@ Create columns on `20171115154202_devise_create_users.rb`
 
 - name
 - confirmed_at
+
+
+## Local MySQL
+export DATABASE_URL="mysql2://root:mysql_for_rails@127.0.0.1:3336/mals"
