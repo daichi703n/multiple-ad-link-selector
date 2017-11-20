@@ -4,8 +4,8 @@ class FeaturePagesController < ApplicationController
   end
 
   def view
-    @mals_url = "https://mals.herokuapp.com"
-    @mals_js_path = "/mals.js?v=0.1"
+    @mals_url = "#{root_url}"
+    @mals_js_path = "mals.js?malskey=#{User.find(current_user.id).hashed_email}"
     @mals_div_id = "mals_replace_target"
   end
 end
