@@ -6,8 +6,9 @@ module Selector
 
     helpers do
       def random_select
+        @user = User.find_by(hashed_email: params[:malskey])
         @arr = Array.new
-        @links = Link.all
+        @links = Link.where(user_id: @user.id)
         @links.each do |link|
           @arr.push(link.link)
         end
