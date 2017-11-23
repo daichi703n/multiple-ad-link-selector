@@ -35,6 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :uid
       t.string :token
       t.string :name
+      t.string :hashed_email, null: false, default: ""
       t.datetime :confirmed_at
 
       t.timestamps null: false

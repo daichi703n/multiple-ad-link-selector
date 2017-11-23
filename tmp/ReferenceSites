@@ -112,3 +112,21 @@ Create columns on `20171115154202_devise_create_users.rb`
 
 - name
 - confirmed_at
+
+
+## Local MySQL
+export DATABASE_URL="mysql2://root:mysql_for_rails@127.0.0.1:3336/mals"
+
+mysql -h localhost --port 3336 -u root -p --protocol tcp
+
+## Devise Users Controller
+http://easyramble.com/create-users-index-show-on-devise.html
+Devise で作成した User モデル用のコントローラーの index, show アクションを追加
+
+```
+routes.rb
+...
+resources :users, :only => [:index, :show]
+
+rails generate controller Users index show
+```

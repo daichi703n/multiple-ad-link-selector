@@ -10,8 +10,17 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  #<<: *default
+  #database: db/development.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  #database: <%= ENV['DATABASE_URL'] %>
+  username: root
+  password: mysql_for_rails
+  host: h-cent-doc01
+  database: mals
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

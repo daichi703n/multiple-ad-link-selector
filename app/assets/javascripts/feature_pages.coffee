@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 #alert('replacer.js')
-console.log('js')
+#console.log('js')
 
 #https://asciidwango.github.io/js-primer/use-case/ajaxapp/xhr/
 ###
