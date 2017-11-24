@@ -63,7 +63,8 @@ const jsPath = (function() {
         }
     }
 })();
-const root_url = window.location.protocol+"//"+window.location.host
+//const root_url = window.location.protocol+"//"+window.location.host
+const root_url = "https://mals.herokuapp.com"
 //console.log(root_url)
 
 query = getQuery(jsPath)
