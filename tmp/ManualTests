@@ -14,3 +14,6 @@ Description: 退会できること。
 Action: Click `Unsubscribe`
 Expect: Display `Not Logged In`.
 
+## データベース操作
+
+## ユーザ制御
