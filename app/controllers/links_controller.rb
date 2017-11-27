@@ -77,8 +77,4 @@ class LinksController < ApplicationController
       params.require(:link).permit(:sort, :description, :link, :enabled)
     end
 
-    def signed_in_user
-      redirect_to root_path, notice: "Please signup or signin." unless signed_in?
-    end
-
 end

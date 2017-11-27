@@ -13,8 +13,5 @@ class UsersController < ApplicationController
   end
 
   private
-    def signed_in_user
-      redirect_to root_path, notice: "Please signup or signin." unless signed_in?
-    end
 
 end
