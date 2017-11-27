@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  before_action :signed_in_user
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links
@@ -75,4 +76,9 @@ class LinksController < ApplicationController
     def link_params
       params.require(:link).permit(:sort, :description, :link, :enabled)
     end
+
+    def signed_in_user
+      redirect_to root_path, notice: "Please signup or signin." unless signed_in?
+    end
+
 end
