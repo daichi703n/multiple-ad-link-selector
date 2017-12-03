@@ -1,0 +1,19 @@
+# 手動テスト項目
+
+## ログイン関連
+
+Description: Googleアカウントでログインできること。
+Action: Click `Signin with Google`
+Expect: Redirect to Google and Logged In. Display email correctly.
+
+Description: ログアウトできること。
+Action: Click `Signout`
+Expect: Display `Not Logged In`.
+
+Description: 退会できること。
+Action: Click `Unsubscribe`
+Expect: Display `Not Logged In`.
+
+## データベース操作
+
+## ユーザ制御

@@ -1,0 +1,132 @@
+HTTP通信 · JavaScriptの入門書 #jsprimer
+https://asciidwango.github.io/js-primer/use-case/ajaxapp/xhr/
+
+Promiseとasync/awaitでJavaScriptの非同期処理をシンプルに記述する - Subterranean Flower
+https://sbfl.net/blog/2016/07/13/simplifying-async-code-with-promise-and-async-await/#asyncawait
+
+innerHTML,textContent－JavaScript入門
+http://www.pori2.net/js/DOM/2.html
+
+
+### Rakuten Affiliate Links
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><p style="font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td><td><div style="background-color:#FFFFFF;margin:0px;padding-top:6px;text-align:center;overflow:auto;"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fiphone7case-woodcase%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000921%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/14bccbe5.7ff72f60.14bccbe6.28807e17/?me_id=1199861&item_id=10000921&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fiphone7woodcase%2Fiphone7case-s1.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fiphone7woodcase%2Fiphone7case-s1.jpg%3F_ex%3D300x300&s=300x300&t=picttext" border="0" style="margin:2px" alt="" title=""></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fiphone7case-woodcase%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000921%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  >■【8/7】iPhone8/7用木製ケース「Wooden case for iPhone8/7」木目が美しいカバー【Qi対応】</a></p></div></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><p style="font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td><td><div style="background-color:#FFFFFF;margin:0px;padding-top:6px;text-align:center;overflow:auto;"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/14bccbe5.7ff72f60.14bccbe6.28807e17/?me_id=1199861&item_id=10000399&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fmokko-ya%2Fcabinet%2Fpc01%2Ffullkiboard-s1.jpg%3F_ex%3D300x300&s=300x300&t=picttext" border="0" style="margin:2px" alt="" title=""></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/14bccbe5.7ff72f60.14bccbe6.28807e17/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmokko-ya%2Fnhp014%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmokko-ya%2Fi%2F10000399%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoiZG93biIsImNvbSI6MSwiY29tcCI6ImxlZnQiLCJwcmljZSI6MCwiYm9yIjowLCJjb2wiOjB9" target="_blank" rel="nofollow" style="word-wrap:break-word;"  >木でできたキーボード「Full Ki-Board」</a></p></div></td></tr></table>
+
+
+## API
+http://www.bokukoko.info/entry/2016/01/01/Grape_on_Rails_%E3%81%A7_API_%E9%96%8B%E7%99%BA
+Grape on Rails で API 開発
+
+https://qiita.com/yimajo/items/d4f484deda7cb9f61a49
+grapeメモ
+
+https://qiita.com/ftyabu/items/0e97394f2263171cf469
+【初心者必見】Grapeを使って、Railsで簡単にAPIを実装する方法を一からまとめてみました！
+
+## Response
+https://developer.mozilla.org/ja/docs/Web/API/Document/write
+document.write は上書きされるため使えない
+
+http://d.hatena.ne.jp/Syunpei/20090907/1252301929
+2009-09-07 JSON.stringify/parseは困ったもんだ。
+
+JSON.parseで実装できた。
+
+## Preview機能
+https://www.rubylife.jp/rails/template/index7.html#section2
+html_safeによりアンエスケープされずに出力される。
+
+Ruby Slim タグなどを含んだ変数をエスケープせずに出力したい。
+http://chaika.hatenablog.com/entry/2017/01/26/183354
+
+## Heroku MySQL
+https://qiita.com/hiyoko/items/108ef1d94dcb5b227b4f
+HerokuでMySQLを使おうとして詰まったところ
+
+## MySQL
+productionに追加
+gem 'mysql2', '~> 0.4.9'
+#  gem 'activerecord-mysql2-adapter', '~> 0.0.3'
+
+`activerecord-mysql2-adapter`をインストールするとArgument Error発生。
+
+## APIクロスドメイン
+https://qiita.com/kadotami/items/3d56cf647e60495eaac8
+Rails(Grape)でAPIを作成する備忘録2
+
+## Google認証
+爆速ッ!! gem omniauth-google-oauth2 で認証させる
+https://qiita.com/bino98/items/596b5cffeca7c104bd90
+
+Client ID:
+948562627344-p3ftu6307di54cd7m0peh4p1tnpnqmer.apps.googleusercontent.com
+
+Client secret:
+zbscxNnrVT9mBiHUDZsafptl
+
+```
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+```
+
+$ bundle install
+$ rails g devise:install
+$ rails g devise user
+
+```
+t.string :users, :provider
+t.string :users, :uid
+t.string :users, :token
+t.string :users, :meta
+```
+
+Model修正のクラス名が違う
+(Qiita)class User < ActiveRecord::Base
+(Rails)class User < ApplicationRecord
+
+$ rails g controller home index
+
+---
+
+
+## リトライ
+http://astlab.jp/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89/ruby-on-rails/rail5%E3%81%A7omniauth%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6google-oauth2%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3
+
+```
+gem 'omniauth-oauth2'
+gem "omniauth-google-oauth2"
+gem 'devise'
+```
+
+rails g devise user
+
+## OAuth
+t.string :provider
+t.string :uid
+t.string :token
+
+## Success Google OAuth
+Create columns on `20171115154202_devise_create_users.rb`
+
+- name
+- confirmed_at
+
+
+## Local MySQL
+export DATABASE_URL="mysql2://root:mysql_for_rails@127.0.0.1:3336/mals"
+
+mysql -h localhost --port 3336 -u root -p --protocol tcp
+
+## Devise Users Controller
+http://easyramble.com/create-users-index-show-on-devise.html
+Devise で作成した User モデル用のコントローラーの index, show アクションを追加
+
+```
+routes.rb
+...
+resources :users, :only => [:index, :show]
+
+rails generate controller Users index show
+```

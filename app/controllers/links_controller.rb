@@ -1,10 +1,14 @@
 class LinksController < ApplicationController
+  before_action :signed_in_user
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    #@links = Link.all
+    @user = User.find(current_user.id)
+    @links = @user.links
   end
 
   # GET /links/1
@@ -24,7 +28,9 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    #@link = Link.new(link_params)
+    @user = User.find(current_user.id)
+    @link = @user.links.new(link_params)
 
     respond_to do |format|
       if @link.save
@@ -71,4 +77,17 @@ class LinksController < ApplicationController
     def link_params
       params.require(:link).permit(:sort, :description, :link, :enabled)
     end
+
+    def correct_user
+      @user = User.find(Link.find(params[:id]).user_id)
+      unless current_user?(@user)
+        logger.warn("Invalid access on Links. #{current_user.email} to #{request.method} #{request.url}")
+        redirect_to root_path, notice: "Please signin with correct user."
+      end
+    end
+
+    def current_user?(user)
+      user == current_user
+    end
+
 end

@@ -7,6 +7,19 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
+    p
+      = link_to 'Signin with Google', user_google_oauth2_omniauth_authorize_path unless user_signed_in?
+    p
+      | Logged in User:
+      = current_user.email if user_signed_in?
+      = "Not Logged In" unless user_signed_in?
+    p
+      = link_to 'Signout', destroy_user_session_path, method: :delete if user_signed_in?
+    P
+      = link_to 'Unsubscribe', '/users', method: :delete, data: { confirm: "Really want to UNSUBSCRIBE?\nYour links will be removed!!" }  if user_signed_in?
+    p
+      = flash.each do |key,value|
+        = content_tag(:div, value, class: "#{key}")
   body
     = yield
 
@@ -20,6 +33,7 @@ html
     h3
       | Feature
     ul
-      li = link_to 'manage', '/feature_pages/manage'
+      /li = link_to 'manage', '/feature_pages/manage'
       li = link_to 'view', '/feature_pages/view'
       li = link_to 'links', '/links'
+      li = link_to 'user', '/users'
