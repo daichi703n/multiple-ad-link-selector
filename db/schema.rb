@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20171118185325) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "encrypted_password", default: ""
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
@@ -35,10 +36,11 @@ ActiveRecord::Schema.define(version: 20171118185325) do
     t.string "uid"
     t.string "token"
     t.string "name"
-    t.string "email", default: "", null: false
     t.string "hashed_email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["hashed_email"], name: "index_users_on_hashed_email", unique: true
   end
 
   add_foreign_key "links", "users"
