@@ -1,4 +1,5 @@
 class FeaturePagesController < ApplicationController
+  before_action :signed_in_user
   def manage
     @links = Link.all
   end
