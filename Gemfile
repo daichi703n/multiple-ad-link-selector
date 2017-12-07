@@ -10,6 +10,7 @@ ruby '2.4.1'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 # Use Grape for API
 gem 'grape'
