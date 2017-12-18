@@ -1,0 +1,21 @@
+div class="navbar navbar-default navbar-fixed-top"
+  /role="navigation"
+  div class="container"
+    div class="navbar-inner"
+      div class="navbar-header"
+        div class="navbar-brand"
+          = link_to "Application", root_path, id: "logo"
+      div id="navbar" class="nav-collapse" data-toggle="collapse" data-target=".nav-collapse"
+        ul class="nav navbar-nav navbar-right"
+          - if user_signed_in?
+            li = link_to current_user.email, '/users'
+            li = link_to 'Signout', destroy_user_session_path, method: :delete
+          - unless user_signed_in?
+            li = link_to "Not Logged In", '#'
+            li = link_to 'Signin with Google', user_google_oauth2_omniauth_authorize_path
+
+  / button class="btn btn-danger"
+  /   = link_to 'Unsubscribe', '/users', method: :delete, data: { confirm: "Really want to UNSUBSCRIBE?\nYour links will be removed!!" }  if user_signed_in?
+div class="container"
+  - flash.each do |key,value|
+    = content_tag(:div, value, class: "alert alert-info #{key}")
