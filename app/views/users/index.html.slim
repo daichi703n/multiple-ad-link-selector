@@ -1,17 +1,19 @@
 h1 Users#index
 p Find me in app/views/users/index.html.slim
 
-table
+table class="table"
   thead
     tr
       /th ID
       th Email
-      th Name
+      th Key
+      /th Name
 
   tbody
     - @users.each do |user|
       tr
         /td = user.id
         td = user.email
-        td = user.name
-        td = link_to 'Detail', user
+        td = user.hashed_email
+        /td = user.name
+        td = link_to 'Detail', user, class: "btn btn-default btn-block"
