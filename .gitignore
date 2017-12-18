@@ -28,3 +28,6 @@
 /tmp_cert
 
 /app/api/tmp/
+
+# Photos
+/app/assets/images/*.JPG
