@@ -19,9 +19,10 @@ development:
   #database: <%= ENV['DATABASE_URL'] %>
   username: root
   password: mysql_for_rails
-  #host: h-cent-doc01
-  host: 127.0.0.1
-  port: 3336
+  host: h-cent-doc01
+  port: 3306
+  #host: 127.0.0.1
+  #port: 3336
   database: mals
 
 # Warning: The database defined as "test" will be erased and

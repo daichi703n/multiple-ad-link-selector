@@ -1,6 +1,6 @@
 h1 Listing links
 
-table
+table class="table table-hover"
   thead
     tr
       th Sort
@@ -20,10 +20,10 @@ table
         td == link.link
         /td = link.link
         td = link.enabled
-        td = link_to 'Show', link
-        td = link_to 'Edit', edit_link_path(link)
-        td = link_to 'Destroy', link, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', link, class: "btn btn-default btn-block"
+        td = link_to 'Edit', edit_link_path(link), class: "btn btn-primary btn-block"
+        td = link_to 'Destroy', link, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-danger btn-block"
 
 br
 
-= link_to 'New Link', new_link_path
+= link_to 'New Link', new_link_path, class: "btn btn-success"

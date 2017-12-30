@@ -3,21 +3,31 @@ p Find me in app/views/users/show.html.slim
 
 p#notice = notice
 
-p
-  strong ID:
-  = @user.id
-p
-  strong Email:
-  = @user.email
-p
-  strong Name:
-  = @user.name
-p
-  strong MalsKey:
-  = @user.hashed_email
+table class="table"
+  tbody
+    tr
+      td class="col-sm-2"
+        strong ID
+      td
+        = @user.id
+    tr
+      td class="col-sm-2"
+        strong Email
+      td
+        = @user.email
+    tr
+      td class="col-sm-2"
+        strong Name
+      td
+        = @user.name
+    tr
+      td class="col-sm-2"
+        strong MalsKey
+      td
+        = @user.hashed_email
 
-=> link_to 'Signout', destroy_user_session_path, method: :delete if user_signed_in?
-'|
-=> link_to 'Unsubscribe', '/users', method: :delete, data: { confirm: "Really want to UNSUBSCRIBE?\nYour links will be removed!!" }  if user_signed_in?
-'|
-=< link_to 'Back', users_path
+=> link_to 'Signout', destroy_user_session_path, class: "btn btn-primary", method: :delete if user_signed_in?
+/'|
+=> link_to 'Unsubscribe', '/users', class: "btn btn-danger", method: :delete, data: { confirm: "Really want to UNSUBSCRIBE?\nYour links will be removed!!" }  if user_signed_in?
+/'|
+=< link_to 'Back', users_path, class: "btn btn-default"

@@ -1,18 +1,31 @@
+h1 Links#show
+p Find me in app/views/links/show.html.slim
+
 p#notice = notice
 
-p
-  strong Sort:
-  = @link.sort
-p
-  strong Description:
-  = @link.description
-p
-  strong Link:
-  = @link.link
-p
-  strong Enabled:
-  = @link.enabled
+table class="table"
+  tbody
+    tr
+      td class="col-sm-2"
+        strong Sort
+      td
+        = @link.sort
+    tr
+      td class="col-sm-2"
+        strong Description
+      td
+        = @link.description
+    tr
+      td class="col-sm-2"
+        strong Link
+      td
+        = @link.link
+    tr
+      td class="col-sm-2"
+        strong Enabled
+      td
+        = @link.enabled
 
-=> link_to 'Edit', edit_link_path(@link)
-'|
-=< link_to 'Back', links_path
+=> link_to 'Edit', edit_link_path(@link), class: "btn btn-primary"
+/'|
+=< link_to 'Back', links_path, class: "btn btn-default"
