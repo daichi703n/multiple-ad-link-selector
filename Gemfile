@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.1'
+ruby '2.5.9'
 
 gem 'slim-rails'
 gem 'html2slim'
@@ -14,7 +14,7 @@ gem 'html2slim'
 gem 'grape'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.2.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -42,11 +42,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-cors', :require => 'rack/cors'
 
 # Use Google OAuth
-gem 'omniauth-oauth2'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '0.8.2'
 gem 'devise'
 
 group :production do
+  gem 'rails_12factor'
   #gem 'pg', '0.20.0'
   gem 'mysql2', '~> 0.4.9'
 #  gem 'activerecord-mysql2-adapter', '~> 0.0.3'
